@@ -19,12 +19,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="MainMenu.png" />
-    <Resource Include="mainMenuImage.png" />
+    <Folder Include="images\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="images\" />
+    <Resource Include="mainMenuImage.png" />
   </ItemGroup>
 
 </Project>
