@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:introduction_cs_municipalities"
         mc:Ignorable="d"
-        Title="Colombia Localities Utiluty App" 
+        Title="Colombia Localities Utility App" 
         Height="400" Width="450"
         WindowStartupLocation="CenterScreen"
 		ResizeMode ="NoResize">
