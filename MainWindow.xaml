@@ -5,20 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:introduction_cs_municipalities"
         mc:Ignorable="d"
-        Title="Colombia Municipalities" Height="450" Width="800"
+        Title="Colombia Municipalities Utiluty App" 
+        Height="550" Width="500"
         WindowStartupLocation="CenterScreen"
 		ResizeMode ="NoResize">
-        
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="697*"/>
-            <ColumnDefinition Width="103*"/>
-        </Grid.ColumnDefinitions>
-		
-        <Grid.Background>
-            <ImageBrush ImageSource="/mainMenuImage.png"/>
-        </Grid.Background>
-        <Button Content="Load Data" HorizontalAlignment="Left" Height="80" VerticalAlignment="Center" Width="328" Background="#FFCDFFB7" BorderBrush="Black" Margin="236,0,0,0" FlowDirection="LeftToRight" UseLayoutRounding="False" ScrollViewer.HorizontalScrollBarVisibility="Visible" AutomationProperties.IsOffscreenBehavior="Default" AutomationProperties.IsColumnHeader="True" Click="loadDataButton"/>
-			
-    </Grid>
+
+    <StackPanel>
+        <StackPanel.Background>
+            <ImageBrush ImageSource="/mainMenuImage.png"></ImageBrush>
+        </StackPanel.Background>
+        <Label Content="Hi" 
+               Width="500" 
+               Height="75" 
+               Background="#5A81DB"
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Center"
+               FontSize="25"
+               FontFamily="Public Sans"
+               FontWeight="Bold"
+               Foreground="#FFFFFF">
+        </Label>
+    </StackPanel>
 </Window>

@@ -29,14 +29,20 @@ namespace introduction_cs_municipalities
 
         private void loadDataButton(object sender, RoutedEventArgs e)
         {
+            IEnumerable<string> csv_data = new List<string>();
             OpenFileDialog openfileDialog = new OpenFileDialog();
-            if (openfileDialog.ShowDialog() == true) { 
-                 File.ReadLines(openfileDialog.FileName);
+            if (openfileDialog.ShowDialog() == true)
+            {
+                openfileDialog.Title = "Select a File";
+                openfileDialog.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
+                openfileDialog.InitialDirectory = @"introduction-cs-municipalities/data";
+                csv_data = File.ReadLines(openfileDialog.FileName);
+            }
 
-        }
-        openfileDialog.Title = "Select file to load data";
-        openfileDialog.Filter = "Files csv(*.csv)|*.csv";
-        openfileDialog.InitialDirectory = @"introduction-cs-municipalities/data";
+            foreach (string item in csv_data)
+            {
+                System.Diagnostics.Debug.WriteLine(item);
+            }
         }
     }
 }
