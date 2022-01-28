@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:introduction_cs_municipalities"
         mc:Ignorable="d"
-        Title="Colombia Municipalities Utiluty App" 
-        Height="550" Width="500"
+        Title="Colombia Localities Utiluty App" 
+        Height="400" Width="450"
         WindowStartupLocation="CenterScreen"
 		ResizeMode ="NoResize">
 
@@ -14,8 +14,7 @@
         <StackPanel.Background>
             <ImageBrush ImageSource="/mainMenuImage.png"></ImageBrush>
         </StackPanel.Background>
-        <Label Content="Hi" 
-               Width="500" 
+        <Label Content="Localities DataBase Visualizer" 
                Height="75" 
                Background="#5A81DB"
                HorizontalContentAlignment="Center"
@@ -25,5 +24,35 @@
                FontWeight="Bold"
                Foreground="#FFFFFF">
         </Label>
+        <Button Content="Load"
+                Foreground="#FFFFFF"
+                FontSize="25"
+                FontWeight="Bold"
+                Background="#5AA3DB"
+                Margin="120, 75, 120, 0"
+                Padding="10"
+                
+                Click="LoadDataButton">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Content="Exit"
+                Foreground="#FFFFFF"
+                FontSize="25"
+                FontWeight="Bold"
+                Background="#5AA3DB"
+                Margin="120, 35, 120, 0"
+                Padding="10"
+                
+                Click="Exit">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </StackPanel>
 </Window>

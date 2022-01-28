@@ -27,7 +27,7 @@ namespace introduction_cs_municipalities
             InitializeComponent();
         }
 
-        private void loadDataButton(object sender, RoutedEventArgs e)
+        private void LoadDataButton(object sender, RoutedEventArgs e)
         {
             IEnumerable<string> csv_data = new List<string>();
             OpenFileDialog openfileDialog = new OpenFileDialog();
@@ -43,6 +43,11 @@ namespace introduction_cs_municipalities
             {
                 System.Diagnostics.Debug.WriteLine(item);
             }
+        }
+
+        private void Exit(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
