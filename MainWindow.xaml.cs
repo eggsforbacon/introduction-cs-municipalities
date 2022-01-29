@@ -47,6 +47,10 @@ namespace introduction_cs_municipalities
                 data = new Data<string, string, string, string, string>(dataSplit[0], dataSplit[1], dataSplit[2], dataSplit[3], dataSplit[4]);
                 dataArray[i] = data;
             }
+
+            TableWindow tableWindow = new TableWindow();
+            this.Close();
+            tableWindow.Show();
         }
 
         private void Exit(object sender, RoutedEventArgs e)

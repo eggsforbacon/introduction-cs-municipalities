@@ -23,5 +23,10 @@ namespace introduction_cs_municipalities
         {
             InitializeComponent();
         }
+
+        private void ShowReport(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

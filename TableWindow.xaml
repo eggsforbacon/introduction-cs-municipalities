@@ -5,8 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:introduction_cs_municipalities"
         mc:Ignorable="d"
-        Title="TableWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Localities DataBase" Height="600" Width="800"
+        ResizeMode="NoResize">
+    <StackPanel>
+        <DataGrid x:Name="DataGrid" ItemsSource="{Binding}"
+                  Height="440">
+            <DataGridColumnHeadersPresenter Background="#5A81DB"
+                                            MinHeight="55px"></DataGridColumnHeadersPresenter>
+        </DataGrid>
+        <StackPanel Background="#5A81DB"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    Margin="0, 50, 0, 50">
+                <ComboBox Margin="50, 0, 130, 0"
+                      Width="245"
+                      Foreground="#FFFFFF"
+                      FontSize="18"
+                      FontWeight="SemiBold"
+                      Background="#5AA3DB"
+                      Padding="10, 5, 10, 5">
+                </ComboBox>
+                <Button Content="Generate Report" Click="ShowReport"
+                    Margin="130, 0, 50, 0"
+                    Foreground="#FFFFFF"
+                    FontSize="18"
+                    FontWeight="Bold"
+                    Background="#5AA3DB"
+                    Padding="10, 5, 10, 5">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="15"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
 </Window>
