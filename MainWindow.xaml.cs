@@ -48,7 +48,7 @@ namespace introduction_cs_municipalities
                 dataArray[i] = data;
             }
 
-            TableWindow tableWindow = new TableWindow();
+            TableWindow tableWindow = new TableWindow(dataArray);
             this.Close();
             tableWindow.Show();
         }

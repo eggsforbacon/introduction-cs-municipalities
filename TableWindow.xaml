@@ -8,10 +8,9 @@
         Title="Localities DataBase" Height="600" Width="800"
         ResizeMode="NoResize">
     <StackPanel>
-        <DataGrid x:Name="DataGrid" ItemsSource="{Binding}"
+        <DataGrid x:Name="DataGrid"
                   Height="440">
-            <DataGridColumnHeadersPresenter Background="#5A81DB"
-                                            MinHeight="55px"></DataGridColumnHeadersPresenter>
+            <DataGridColumnHeadersPresenter Background="#5A81DB" MinHeight="55px"></DataGridColumnHeadersPresenter>
         </DataGrid>
         <StackPanel Background="#5A81DB"
                     HorizontalAlignment="Stretch"

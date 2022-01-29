@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +20,15 @@ namespace introduction_cs_municipalities
     /// </summary>
     public partial class TableWindow : Window
     {
-        public TableWindow()
+        private Data<string, string, string, string, string>[] dataArray;
+        public Data<string, string, string, string, string>[] GetDataArray()
+        {
+            return dataArray;
+        }
+        public TableWindow(Data<string, string, string, string, string>[] _dataArray)
         {
             InitializeComponent();
+            dataArray = _dataArray;
         }
 
         private void ShowReport(object sender, RoutedEventArgs e)
