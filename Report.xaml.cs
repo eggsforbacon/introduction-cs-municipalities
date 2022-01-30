@@ -60,10 +60,10 @@ namespace introduction_cs_municipalities
         
         List<Locality> LocalitiesRet = new List<Locality>();
         Data<string, string, string, string, string>[] dataArray = Report.GetData();
+        
         Locality municipality = new Locality() { Type = "Municipio", Quantity = 0};
         Locality isle = new Locality() { Type = "Isla", Quantity = 0};
         Locality nonMunicipalityArea = new Locality() { Type = "Área no municipalizada", Quantity = 0};
-
 
         public List<Locality> GetLocalitiesList()
         {
@@ -88,10 +88,10 @@ namespace introduction_cs_municipalities
             if (isle.Quantity < 1) isle.Quantity = 1;
             if (nonMunicipalityArea.Quantity < 1) nonMunicipalityArea.Quantity = 1;
 
-            municipality.Times = "(" + municipality.Quantity / INCREMENT + " " + municipality.Type.ToLower() + "s )";
-            isle.Times = "(" + isle.Quantity / INCREMENT + " " + isle.Type.ToLower() + "s )";
-            nonMunicipalityArea.Times = "(" + nonMunicipalityArea.Quantity / INCREMENT + " " + nonMunicipalityArea.Type.ToLower() + "s )";
-
+            municipality.Times = "(" + municipality.Quantity + " " + municipality.Type.ToLower() + "s )";
+            isle.Times = "(" + (isle.Quantity-1)*2 + " " + isle.Type.ToLower() + "s )";
+            nonMunicipalityArea.Times = "(" + nonMunicipalityArea.Quantity + " " + nonMunicipalityArea.Type.ToLower() + "s )";
+            
             LocalitiesRet.Add(municipality);
             LocalitiesRet.Add(isle);
             LocalitiesRet.Add(nonMunicipalityArea);
