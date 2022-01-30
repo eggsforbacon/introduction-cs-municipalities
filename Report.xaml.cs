@@ -21,9 +21,14 @@ namespace introduction_cs_municipalities
     {
         static Data<string, string, string, string, string>[] dataArray = default!;
 
-        public Report(Data<string, string, string, string, string>[] _dataArray)
+        public Report(Data<string, string, string, string, string>[] _dataArray, int[] quants)
         {
             dataArray = _dataArray;
+
+            Mun.Content = "(" + quants[0] + ")";
+            Isle.Content = "(" + quants[1] + ")";
+            nMun.Content = "(" + quants[2] + ")";
+
             InitializeComponent();
         }
 
@@ -38,13 +43,13 @@ namespace introduction_cs_municipalities
         public const double INCREMENT = 0.5;
         public string Type { get; set; } = default!;
         public double Quantity { get; set; }
-
-        public string Times { get; set; } = default!;
     }
 
     public class Localities
     {
         const double INCREMENT = 0.5;
+
+        public static string munString = "Me mide", isleString = " más ", nMunString = " que a Kennet";
         public List<Locality> LocalitiesList
         {
             get
@@ -63,7 +68,6 @@ namespace introduction_cs_municipalities
         Locality municipality = new Locality() { Type = "Municipio", Quantity = 0};
         Locality isle = new Locality() { Type = "Isla", Quantity = 0};
         Locality nonMunicipalityArea = new Locality() { Type = "Área no municipalizada", Quantity = 0};
-
 
         public List<Locality> GetLocalitiesList()
         {
@@ -87,10 +91,6 @@ namespace introduction_cs_municipalities
             if (municipality.Quantity < 1) municipality.Quantity = 1;
             if (isle.Quantity < 1) isle.Quantity = 1;
             if (nonMunicipalityArea.Quantity < 1) nonMunicipalityArea.Quantity = 1;
-
-            municipality.Times = "(" + municipality.Quantity / INCREMENT + " " + municipality.Type.ToLower() + "s )";
-            isle.Times = "(" + isle.Quantity / INCREMENT + " " + isle.Type.ToLower() + "s )";
-            nonMunicipalityArea.Times = "(" + nonMunicipalityArea.Quantity / INCREMENT + " " + nonMunicipalityArea.Type.ToLower() + "s )";
 
             LocalitiesRet.Add(municipality);
             LocalitiesRet.Add(isle);

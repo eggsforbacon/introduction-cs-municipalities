@@ -22,16 +22,19 @@ namespace introduction_cs_municipalities
     public partial class TableWindow : Window
     {
         private Data<string, string, string, string, string>[] dataArray;
+
+        private int[] quants;
         public Data<string, string, string, string, string>[] GetDataArray()
         {
             return dataArray;
         }
-        public TableWindow(Data<string, string, string, string, string>[] _dataArray)
+        public TableWindow(Data<string, string, string, string, string>[] _dataArray, int[] _quants)
         {
             InitializeComponent();
             dataArray = _dataArray;
             DataGrid.Items.Clear();
             DataGrid.ItemsSource = _dataArray;
+            quants = _quants;
             FillComboBox();
             
         }
@@ -85,7 +88,7 @@ namespace introduction_cs_municipalities
 
         private void ShowReport(object sender, RoutedEventArgs e)
         {
-            Report report = new Report(dataArray);
+            Report report = new Report(dataArray, quants);
             report.Owner = this;
             report.ShowDialog();
         }
