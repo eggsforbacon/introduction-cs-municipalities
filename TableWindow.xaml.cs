@@ -32,20 +32,21 @@ namespace introduction_cs_municipalities
             dataArray = _dataArray;
             DataGrid.Items.Clear();
             DataGrid.ItemsSource = _dataArray;
-            fillComboBox(_dataArray);
+            fillComboBox();
             
         }
 
-        private void fillComboBox(Data<string, string, string, string, string>[] _dataArray)
+        private void fillComboBox()
         {
             ArrayList comboOption = new ArrayList();
             Boolean added = false;
-            for (int i = 0; i < _dataArray.Length; i++)
+            ComboBox.Items.Add("SIN FILTRAR");
+            for (int i = 0; i < GetDataArray().Length; i++)
             {
                 added = false;
                 for (int j = 0; j < comboOption.Count && !added; j++)
                 {
-                    if (_dataArray[i].c == comboOption[j] as string)
+                    if (GetDataArray()[i].c == comboOption[j] as string)
                     {
                         added = true;
                     }
@@ -53,7 +54,7 @@ namespace introduction_cs_municipalities
 
                 if (!added)
                 {
-                    comboOption.Add(_dataArray[i].c);
+                    comboOption.Add(GetDataArray()[i].c);
                 }
             }
             foreach (var item in comboOption)
@@ -64,6 +65,26 @@ namespace introduction_cs_municipalities
         private void ShowReport(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void selectionChange(object sender, SelectionChangedEventArgs e)
+        {
+            if(ComboBox.SelectedItem.Equals("SIN FILTRAR"))
+            {
+                DataGrid.ItemsSource = GetDataArray();
+            }
+            else
+            {
+                ArrayList tempDeparment = new ArrayList();
+                foreach (var item in GetDataArray())
+                {
+                    if (item.c.Equals(ComboBox.SelectedItem))
+                    {
+                        tempDeparment.Add(item);
+                    }
+                }
+                DataGrid.ItemsSource = tempDeparment;
+            }
         }
     }
 }

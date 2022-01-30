@@ -33,7 +33,7 @@
                       FontSize="20"
                       FontWeight="Bold"
                       Background="#5AA3DB"
-                      Padding="10, 5, 10, 5" FontFamily="Palatino Linotype" Text="Filtrar por departamento"/>
+                      Padding="10, 5, 10, 5" FontFamily="Palatino Linotype" Text="Filtrar por departamento" SelectedIndex="0" SelectionChanged="selectionChange"/>
                 <Button Content="Generate Report" Click="ShowReport"
                     Margin="130, 0, 50, 0"
                     Foreground="#FFFFFF"
