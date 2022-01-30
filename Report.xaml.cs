@@ -25,10 +25,6 @@ namespace introduction_cs_municipalities
         {
             dataArray = _dataArray;
 
-            Mun.Content = "(" + quants[0] + ")";
-            Isle.Content = "(" + quants[1] + ")";
-            nMun.Content = "(" + quants[2] + ")";
-
             InitializeComponent();
         }
 
@@ -65,6 +61,7 @@ namespace introduction_cs_municipalities
         
         List<Locality> LocalitiesRet = new List<Locality>();
         Data<string, string, string, string, string>[] dataArray = Report.GetData();
+        
         Locality municipality = new Locality() { Type = "Municipio", Quantity = 0};
         Locality isle = new Locality() { Type = "Isla", Quantity = 0};
         Locality nonMunicipalityArea = new Locality() { Type = "Área no municipalizada", Quantity = 0};
@@ -92,6 +89,7 @@ namespace introduction_cs_municipalities
             if (isle.Quantity < 1) isle.Quantity = 1;
             if (nonMunicipalityArea.Quantity < 1) nonMunicipalityArea.Quantity = 1;
 
+            
             LocalitiesRet.Add(municipality);
             LocalitiesRet.Add(isle);
             LocalitiesRet.Add(nonMunicipalityArea);
