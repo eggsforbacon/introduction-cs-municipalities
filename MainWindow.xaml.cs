@@ -26,6 +26,9 @@ namespace introduction_cs_municipalities
          */
         private void LoadDataButton(object sender, RoutedEventArgs e)
         {
+
+
+            int[] quant = {0, 0, 0};
             string[] csv_data = new string[AllLines];
             OpenFileDialog openfileDialog = new OpenFileDialog();
             if (openfileDialog.ShowDialog() == true)
@@ -45,10 +48,15 @@ namespace introduction_cs_municipalities
                 var dataSplit = csv_data[i + 1].Split(",");
                 Data<string, string, string, string, string> data;
                 data = new Data<string, string, string, string, string>(dataSplit[0], dataSplit[1], dataSplit[2], dataSplit[3], dataSplit[4]);
+
+                if (dataSplit[4].Equals("Municipio")) quant[0]++;
+                else if (dataSplit[4].Equals("Isla")) quant[1]++;
+                else if (dataSplit[4].Equals("Área no municipalizada")) quant[2]++;
+
                 dataArray[i] = data;
             }
 
-            TableWindow tableWindow = new TableWindow(dataArray);
+            TableWindow tableWindow = new TableWindow(dataArray, quant);
             this.Close();
             tableWindow.Show();
         }

@@ -31,7 +31,6 @@
                 Background="#5AA3DB"
                 Margin="120, 75, 120, 0"
                 Padding="10"
-                
                 Click="LoadDataButton">
             <Button.Resources>
                 <Style TargetType="Border">
