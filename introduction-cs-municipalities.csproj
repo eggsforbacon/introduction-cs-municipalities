@@ -22,4 +22,8 @@
     <Resource Include="mainMenuImage.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="docs\" />
+  </ItemGroup>
+
 </Project>
