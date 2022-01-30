@@ -35,28 +35,16 @@ namespace introduction_cs_municipalities
 
     public class Locality
     {
-        public const double INCREMENT = 0.4;
+        public const double INCREMENT = 0.5;
         public string Type { get; set; } = default!;
         public double Quantity { get; set; }
 
-        public int Times
-        {
-            get
-            {
-                return (int) (Quantity / INCREMENT);
-            }
-
-            set
-            {
-
-            }
-        }
+        public string Times { get; set; } = default!;
     }
 
     public class Localities
     {
-        const double INCREMENT = 0.4;
-
+        const double INCREMENT = 0.5;
         public List<Locality> LocalitiesList
         {
             get
@@ -100,10 +88,13 @@ namespace introduction_cs_municipalities
             if (isle.Quantity < 1) isle.Quantity = 1;
             if (nonMunicipalityArea.Quantity < 1) nonMunicipalityArea.Quantity = 1;
 
+            municipality.Times = "(" + municipality.Quantity / INCREMENT + " " + municipality.Type.ToLower() + "s )";
+            isle.Times = "(" + isle.Quantity / INCREMENT + " " + isle.Type.ToLower() + "s )";
+            nonMunicipalityArea.Times = "(" + nonMunicipalityArea.Quantity / INCREMENT + " " + nonMunicipalityArea.Type.ToLower() + "s )";
+
             LocalitiesRet.Add(municipality);
             LocalitiesRet.Add(isle);
             LocalitiesRet.Add(nonMunicipalityArea);
-
             return LocalitiesRet.ToList();
         }
 

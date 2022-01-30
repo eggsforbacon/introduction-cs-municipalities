@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:introduction_cs_municipalities"
         mc:Ignorable="d"
-        Title="Report" Height="450" Width="800"
+        Title="Report" Height="450" Width="900"
         ResizeMode="NoResize"
        >
     <Window.DataContext>
@@ -13,22 +13,37 @@
     </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="90"></ColumnDefinition>
+            <ColumnDefinition Width="120"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition Width="90"></ColumnDefinition>
+            <ColumnDefinition Width="120"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="70"></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition Height="120"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1"
+              Margin="15, 0, 0, 0">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            
+            <TextBlock Grid.Row ="0" 
+                       Text="Municipios"
+                       TextWrapping="Wrap"
+                       VerticalAlignment="Center"
+                       TextAlignment="Center"/>
+            <TextBlock Grid.Row="1" 
+                       Text="Islas"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"
+                       VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="2" 
+                       Text="Areas No Municipalizadas"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"
+                       VerticalAlignment="Center"/>
         </Grid>
         <ListBox FontSize="25"
                  ItemsSource="{Binding LocalitiesList}"
@@ -65,5 +80,29 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <Grid Grid.Column="2"
+              Grid.Row="1"
+              Margin="0, 0, 15, 0">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Row ="0"
+                   x:Name="Mun"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center">
+            </Label>
+            <Label Grid.Row="1"
+                   x:Name="Isle"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center">
+            </Label>
+            <Label Grid.Row="2"
+                   x:Name="nMun"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center">
+            </Label>
+        </Grid>
     </Grid>
 </Window>
