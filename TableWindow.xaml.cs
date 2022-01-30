@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -31,8 +32,35 @@ namespace introduction_cs_municipalities
             dataArray = _dataArray;
             DataGrid.Items.Clear();
             DataGrid.ItemsSource = _dataArray;
+            fillComboBox(_dataArray);
+            
         }
 
+        private void fillComboBox(Data<string, string, string, string, string>[] _dataArray)
+        {
+            ArrayList comboOption = new ArrayList();
+            Boolean added = false;
+            for (int i = 0; i < _dataArray.Length; i++)
+            {
+                added = false;
+                for (int j = 0; j < comboOption.Count && !added; j++)
+                {
+                    if (_dataArray[i].c == comboOption[j] as string)
+                    {
+                        added = true;
+                    }
+                }
+
+                if (!added)
+                {
+                    comboOption.Add(_dataArray[i].c);
+                }
+            }
+            foreach (var item in comboOption)
+            {
+                ComboBox.Items.Add(item);
+            }
+        }
         private void ShowReport(object sender, RoutedEventArgs e)
         {
 

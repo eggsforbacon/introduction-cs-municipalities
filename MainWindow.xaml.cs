@@ -14,7 +14,7 @@ namespace introduction_cs_municipalities
         public const int AllLines = 1127;
         // Lines to read of the document
         public const int LinesToRead = 1121;
-        Data<string,string,string,string,string>[] dataArray = new Data<string, sstring, string, string, string>[LinesToRead];
+        Data<string,string,string,string,string>[] dataArray = new Data<string, string, string, string, string>[LinesToRead];
         public MainWindow()
         {
             InitializeComponent();
