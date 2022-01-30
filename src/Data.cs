@@ -2,11 +2,11 @@
 
 public class Data<T, V, C, D, E>
 {
-	private T t;
-	private V v;
-	private C c;
-	private D d;
-	private E e;
+	public T t { get; set;}
+	public V v { get; set;}
+	public C c { get; set;}
+	public D d { get; set;}
+	public E e { get; set; }
 	public Data(T t,V v,C c,D d,E e)
 	{
 		this.t = t;
@@ -14,25 +14,5 @@ public class Data<T, V, C, D, E>
 		this.c = c;	
 		this.d = d;
 		this.e = e;
-	}
-	public T getFirstColumn()
-    {
-		return t;
-    }
-	public V getSecondColumn()
-	{
-		return v;
-	}
-	public C getThirdColumn()
-	{
-		return c;
-	}
-	public D getFourthColumn()
-	{
-		return d;
-	}
-	public E getFiveColumn()
-	{
-		return e;
 	}
 }

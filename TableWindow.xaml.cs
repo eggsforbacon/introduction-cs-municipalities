@@ -29,6 +29,8 @@ namespace introduction_cs_municipalities
         {
             InitializeComponent();
             dataArray = _dataArray;
+            DataGrid.Items.Clear();
+            DataGrid.ItemsSource = _dataArray;
         }
 
         private void ShowReport(object sender, RoutedEventArgs e)

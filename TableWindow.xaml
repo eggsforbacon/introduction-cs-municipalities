@@ -9,7 +9,15 @@
         ResizeMode="NoResize">
     <StackPanel>
         <DataGrid x:Name="DataGrid"
-                  Height="440">
+                  Height="440" AutoGenerateColumns="false">
+            
+            <DataGrid.Columns>
+                <DataGridTextColumn Header ="Código Departamento" Binding="{Binding t}" Width="150"/>
+                <DataGridTextColumn Header ="Código Municipio" Binding="{Binding v}" Width="150"/>
+                <DataGridTextColumn Header ="Nombre Departamento" Binding="{Binding c}" Width="150"/>
+                <DataGridTextColumn Header ="Nombre Municipio" Binding="{Binding d}" Width="150"/>
+                <DataGridTextColumn Header ="Tipo" Binding="{Binding e}" Width="*"/>
+            </DataGrid.Columns>
             <DataGridColumnHeadersPresenter Background="#5A81DB" MinHeight="55px"></DataGridColumnHeadersPresenter>
         </DataGrid>
         <StackPanel Background="#5A81DB"
