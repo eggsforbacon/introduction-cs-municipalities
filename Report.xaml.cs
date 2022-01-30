@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,8 +18,8 @@ namespace introduction_cs_municipalities
     /// <summary>
     /// Interaction logic for Report.xaml
     /// </summary>
-    public partial class Report : Window
-    {
+    public partial class Report : Window 
+    { 
         static Data<string, string, string, string, string>[] dataArray = default!;
 
         public Report(Data<string, string, string, string, string>[] _dataArray, int[] quants)
@@ -26,6 +27,15 @@ namespace introduction_cs_municipalities
             dataArray = _dataArray;
 
             InitializeComponent();
+
+            int municipalitiesWidth = (int)((Locality)lBox.Items[0]).Quantity * 2;
+            int islesWidth = (int)((Locality) lBox.Items[1]).Quantity;
+            int nonMunipAreasWidth = (int)((Locality) lBox.Items[2]).Quantity * 2;
+
+            Mun.Content = municipalitiesWidth + " localidades";
+            Isle.Content = islesWidth + " localidades";
+            nMun.Content = nonMunipAreasWidth + " localidades";
+
         }
 
         public static Data<string, string, string, string,string>[] GetData()

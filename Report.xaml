@@ -53,13 +53,15 @@
                  VerticalAlignment="Center"
                  HorizontalAlignment="Center"
                  BorderBrush="Transparent"
+                 x:Name="lBox"
                  >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Rectangle Height="30"
                                Width="{Binding Quantity}"
                                Margin="5, 18, 5, 18"
-                               VerticalAlignment="Center">
+                               VerticalAlignment="Center"
+                               >
                         <Rectangle.Style>
                             <Style TargetType="Rectangle">
                                 <Setter Property="Fill" Value="Black"/>
