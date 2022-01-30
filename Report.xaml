@@ -106,5 +106,14 @@
                    HorizontalAlignment="Center">
             </Label>
         </Grid>
+        <Label Grid.Column="1" Name="Label0" Content="0" HorizontalAlignment="Left" Margin="42,0,5,18" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Name="label1" Content="137" HorizontalAlignment="Left" Margin="109.25,0,5,18" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Name="label2" Content="274" HorizontalAlignment="Left" Margin="176,0,5,18" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Name="label3" Content="411" HorizontalAlignment="Left" Margin="243.75,0,5,18" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Name="label4" Content="548" HorizontalAlignment="Left" Margin="311,0,5,18" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Name="label5" Content="685" HorizontalAlignment="Left" Margin="378.25,0,5,18" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Name="label6" Content="822" HorizontalAlignment="Left" Margin="445.5,0,5,18" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Name="label7" Grid.Column="1" Content="959" HorizontalAlignment="Left" Margin="513,0,5,18" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="-1,0.156"/>
+        <Label Grid.Column="1" Name="label8" Content ="1102" HorizontalAlignment="Left" Margin="580.5,0,5,18" Grid.Row="1" VerticalAlignment="Top"/>
     </Grid>
 </Window>
