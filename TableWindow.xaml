@@ -9,16 +9,17 @@
         ResizeMode="NoResize">
     <StackPanel>
         <DataGrid x:Name="DataGrid"
-                  Height="440" AutoGenerateColumns="false">
+                  Height="440" AutoGenerateColumns="false"
+                  FontFamily="Segoe UI"
+                  FontSize="15">
             
             <DataGrid.Columns>
-                <DataGridTextColumn Header ="Código Departamento" Binding="{Binding t}" Width="150"/>
-                <DataGridTextColumn Header ="Código Municipio" Binding="{Binding v}" Width="150"/>
-                <DataGridTextColumn Header ="Nombre Departamento" Binding="{Binding c}" Width="150"/>
-                <DataGridTextColumn Header ="Nombre Municipio" Binding="{Binding d}" Width="150"/>
-                <DataGridTextColumn Header ="Tipo" Binding="{Binding e}" Width="*"/>
+                <DataGridTextColumn Header ="Department Code" Binding="{Binding t}" Width="150"/>
+                <DataGridTextColumn Header ="Locality Code" Binding="{Binding v}" Width="150"/>
+                <DataGridTextColumn Header ="Department Name" Binding="{Binding c}" Width="150"/>
+                <DataGridTextColumn Header ="Locality Name" Binding="{Binding d}" Width="150"/>
+                <DataGridTextColumn Header ="Type" Binding="{Binding e}" Width="*"/>
             </DataGrid.Columns>
-            <DataGridColumnHeadersPresenter Background="#5A81DB" MinHeight="55px"></DataGridColumnHeadersPresenter>
         </DataGrid>
         <StackPanel Background="#5A81DB"
                     HorizontalAlignment="Stretch"
@@ -27,13 +28,13 @@
                     HorizontalAlignment="Stretch"
                     VerticalAlignment="Center"
                     Margin="0, 50, 0, 50">
-                <ComboBox  Name ="ComboBox" Margin="50, 0, 130, 0"
+                <ComboBox  x:Name ="ComboBox" Margin="50, 0, 130, 0"
                       Width="245"
                       Foreground="Black"
                       FontSize="20"
                       FontWeight="Bold"
                       Background="#5AA3DB"
-                      Padding="10, 5, 10, 5" FontFamily="Palatino Linotype" Text="Filtrar por departamento" SelectedIndex="0" SelectionChanged="selectionChange"/>
+                      Padding="10, 5, 10, 5" FontFamily="Palatino Linotype" Text="Filtrar por departamento" SelectedIndex="0" SelectionChanged="SelectionChange"/>
                 <Button Content="Generate Report" Click="ShowReport"
                     Margin="130, 0, 50, 0"
                     Foreground="#FFFFFF"

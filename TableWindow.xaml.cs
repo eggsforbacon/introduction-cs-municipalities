@@ -32,15 +32,15 @@ namespace introduction_cs_municipalities
             dataArray = _dataArray;
             DataGrid.Items.Clear();
             DataGrid.ItemsSource = _dataArray;
-            fillComboBox();
+            FillComboBox();
             
         }
 
-        private void fillComboBox()
+        private void FillComboBox()
         {
             ArrayList comboOption = new ArrayList();
             Boolean added = false;
-            ComboBox.Items.Add("SIN FILTRAR");
+            ComboBox.Items.Add("NO FILTER");
             for (int i = 0; i < GetDataArray().Length; i++)
             {
                 added = false;
@@ -62,14 +62,10 @@ namespace introduction_cs_municipalities
                 ComboBox.Items.Add(item);
             }
         }
-        private void ShowReport(object sender, RoutedEventArgs e)
-        {
 
-        }
-
-        private void selectionChange(object sender, SelectionChangedEventArgs e)
+        private void SelectionChange(object sender, SelectionChangedEventArgs e)
         {
-            if(ComboBox.SelectedItem.Equals("SIN FILTRAR"))
+            if(ComboBox.SelectedItem.Equals("NO FILTER"))
             {
                 DataGrid.ItemsSource = GetDataArray();
             }
@@ -85,6 +81,13 @@ namespace introduction_cs_municipalities
                 }
                 DataGrid.ItemsSource = tempDeparment;
             }
+        }
+
+        private void ShowReport(object sender, RoutedEventArgs e)
+        {
+            Report report = new Report(dataArray);
+            report.Owner = this;
+            report.ShowDialog();
         }
     }
 }
